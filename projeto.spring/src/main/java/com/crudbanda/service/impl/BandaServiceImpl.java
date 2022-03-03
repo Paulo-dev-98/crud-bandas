@@ -41,6 +41,8 @@ public class BandaServiceImpl implements BandaService{
 	@Override
 	public BandaDTO salvarBanda(BandaDTO banda) {
        Banda entity = bandaMapper.converterBandaDtoParaEntity(banda);
+       entity.getAlbuns().stream().forEach(e -> e.setBanda(entity));
+       entity.getIntegrantes().stream().forEach(e -> e.setBanda(entity));
        bandaRepository.save(entity);
        return banda;
 	}
