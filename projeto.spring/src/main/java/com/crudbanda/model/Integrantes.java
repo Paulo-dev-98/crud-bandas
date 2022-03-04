@@ -33,11 +33,11 @@ public class Integrantes {
 	@Column(name = "instrumento")
 	private String Instrumento;
 	
+	@Column(name = "breve_historia")
+	private String breveHistoria;
+	
 	@ManyToOne
 	@JoinColumn(name = "banda_id")
 	private Banda banda;
-	
-	@Column(name = "breve_historia")
-	private String breveHistoria;
 
 }

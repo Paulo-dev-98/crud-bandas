@@ -1,7 +1,5 @@
 package com.crudbanda.model.dto;
 
-import java.util.List;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,12 +7,14 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class BandaDTO {
-	
+public class IntegrantesDTO {
+   
 	private Integer id;
 	private String nome;
-	private String dataFormacao;
-	private List<AlbunsDTO> albunsDto;
-	private List<IntegrantesDTO> integrantesDto;
+	private String dataEntrada;
+	private String dataSaida;
+	private String instrumento;
+	private String breveHistoria;
+	private BandaDTO bandaDto;
 	
 }
