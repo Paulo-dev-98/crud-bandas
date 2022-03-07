@@ -35,10 +35,10 @@ public class Banda implements Serializable{
 	@Column(name = "data_formacao")
 	private String dataFormacao;
 	
-	@OneToMany(cascade=CascadeType.PERSIST, fetch = FetchType.LAZY, mappedBy = "banda")
+	@OneToMany(cascade=CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "banda")
 	private List<Albuns> albuns;
 	
-	@OneToMany(cascade=CascadeType.PERSIST)
+	@OneToMany(cascade=CascadeType.ALL)
 	private List<Integrantes> integrantes;
 
 }

@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,6 +31,11 @@ public class BandaController {
 	@PostMapping(value = "/new")
 	public ResponseEntity<BandaDTO> salvarBanda(@RequestBody BandaDTO banda){
 		return ResponseEntity.ok(bandaService.salvarBanda(banda));
+	}
+	
+	@PutMapping(value = "/update")
+	public ResponseEntity<BandaDTO> atualizarBanda(@RequestBody BandaDTO banda){
+		return ResponseEntity.ok(bandaService.atualizarBanda(banda));
 	}
 
 }

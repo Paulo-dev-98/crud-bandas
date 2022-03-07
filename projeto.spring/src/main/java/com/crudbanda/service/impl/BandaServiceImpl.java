@@ -24,7 +24,7 @@ public class BandaServiceImpl implements BandaService{
 	}
 	
 	
-
+   //lista todas as bandas
 	@Override
 	public List<BandaDTO> buscarTodos() {
 		
@@ -37,12 +37,17 @@ public class BandaServiceImpl implements BandaService{
 	}
 
 
-
+    // salva banda
 	@Override
 	public BandaDTO salvarBanda(BandaDTO bandaDto) {
        Banda entity = bandaMapper.converterBandaDtoParaEntity(bandaDto);
        bandaRepository.save(entity);
        return bandaMapper.converterBandaEntityParaBandaDto(entity);
 	}
-
+	
+	// atualizar dados
+	public BandaDTO atualizarBanda(BandaDTO bandaDto) {
+		Banda entity = bandaRepository.save(bandaMapper.converterBandaDtoParaEntity(bandaDto));
+		return bandaMapper.converterBandaEntityParaBandaDto(entity);
+	}
 }
