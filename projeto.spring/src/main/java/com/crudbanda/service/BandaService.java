@@ -10,4 +10,6 @@ public interface BandaService {
 	BandaDTO salvarBanda(BandaDTO banda);
 	
 	BandaDTO atualizarBanda(BandaDTO banda);
+	
+	BandaDTO buscarBandaPorId(Integer id);
 }

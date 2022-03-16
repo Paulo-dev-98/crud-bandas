@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -26,6 +27,11 @@ public class BandaController {
 	@GetMapping(value = "/all")
 	public ResponseEntity<List<BandaDTO>> buscarTodos(){
 		return ResponseEntity.ok(bandaService.buscarTodos());
+	}
+	
+	@GetMapping(value = "/{id}")
+	public ResponseEntity<BandaDTO> buscarBandaPorId(@PathVariable("id") Integer id){
+		return ResponseEntity.ok(bandaService.buscarBandaPorId(id));
 	}
 	
 	@PostMapping(value = "/new")

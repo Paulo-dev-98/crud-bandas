@@ -35,6 +35,17 @@ public class BandaServiceImpl implements BandaService{
 				.collect(Collectors.toList());
 
 	}
+	
+	// buscando banda por id
+	@Override
+	public BandaDTO buscarBandaPorId(Integer id) {
+		try {
+			Banda banda = bandaRepository.findById(id).get();
+			return bandaMapper.converterBandaEntityParaBandaDto(banda);
+		} catch (Exception e) {
+			throw new RuntimeException("id não encontrado");
+		}
+	}
 
 
     // salva banda
