@@ -1,11 +1,13 @@
 package com.crudbanda.service.impl;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
 import com.crudbanda.mapper.BandaMapper;
+import com.crudbanda.model.Albuns;
 import com.crudbanda.model.Banda;
 import com.crudbanda.model.dto.BandaDTO;
 import com.crudbanda.repository.BandaRepository;
@@ -46,6 +48,14 @@ public class BandaServiceImpl implements BandaService{
 			throw new RuntimeException("id não encontrado");
 		}
 	}
+	
+//	public List<BandaDTO> buscarBandasPorAlbuns(Integer albumId){
+//		return this.bandaRepository
+//				.findByAlbuns(Arrays.asList(new Albuns(albumId)), true)
+//				.Stream()
+//				.map(this.bandaMapper::converterBandaEntityParaBandaDto)
+//				.collect(Collectors.toList());
+//	}
 
 
     // salva banda

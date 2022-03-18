@@ -12,4 +12,6 @@ public interface BandaService {
 	BandaDTO atualizarBanda(BandaDTO banda);
 	
 	BandaDTO buscarBandaPorId(Integer id);
+	
+	List<BandaDTO> buscarBandasPorAlbuns(Integer albumId);
 }

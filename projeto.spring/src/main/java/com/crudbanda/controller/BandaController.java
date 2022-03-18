@@ -34,6 +34,10 @@ public class BandaController {
 		return ResponseEntity.ok(bandaService.buscarBandaPorId(id));
 	}
 	
+//	public ResponseEntity<List<BandaDTO>> buscarBandasPorAlbuns(@PathVariable("albunsId") Integer albunsId){
+//		return ResponseEntity.ok(bandaService.buscarBandasPorAlbuns(albunsId));
+//	}
+	
 	@PostMapping(value = "/new")
 	public ResponseEntity<BandaDTO> salvarBanda(@RequestBody BandaDTO banda){
 		return ResponseEntity.ok(bandaService.salvarBanda(banda));
