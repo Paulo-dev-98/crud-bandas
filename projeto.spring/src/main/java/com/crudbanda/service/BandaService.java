@@ -13,5 +13,5 @@ public interface BandaService {
 	
 	BandaDTO buscarBandaPorId(Integer id);
 	
-	List<BandaDTO> buscarBandasPorAlbuns(Integer albumId);
+//	List<BandaDTO> buscarBandasPorAlbuns(Integer albumId);
 }
