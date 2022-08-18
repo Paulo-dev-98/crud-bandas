@@ -13,5 +13,7 @@ public interface BandaService {
 	
 	BandaDTO buscarBandaPorId(Integer id);
 	
+	void deletarBandaPorId(Integer id);
+	
 //	List<BandaDTO> buscarBandasPorAlbuns(Integer albumId);
 }

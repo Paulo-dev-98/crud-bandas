@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
+import com.crudbanda.exception.ResourceNotFoundException;
 import com.crudbanda.mapper.BandaMapper;
 import com.crudbanda.model.Banda;
 import com.crudbanda.model.dto.BandaDTO;
@@ -65,8 +66,16 @@ public class BandaServiceImpl implements BandaService{
 	}
 	
 	// atualizar dados
+	@Override
 	public BandaDTO atualizarBanda(BandaDTO bandaDto) {
 		Banda entity = bandaRepository.save(bandaMapper.converterBandaDtoParaEntity(bandaDto));
 		return bandaMapper.converterBandaEntityParaBandaDto(entity);
+	}
+	
+	@Override
+	public void deletarBandaPorId(Integer id) {
+		Banda entity = bandaRepository.findById(id)
+				.orElseThrow(() -> new ResourceNotFoundException("id não encontrado"));
+		bandaRepository.delete(entity);	
 	}
 }

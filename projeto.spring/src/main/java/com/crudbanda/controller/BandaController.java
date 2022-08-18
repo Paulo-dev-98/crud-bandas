@@ -2,7 +2,9 @@ package com.crudbanda.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,11 +20,8 @@ import com.crudbanda.service.BandaService;
 @RequestMapping("/api/bandas")
 public class BandaController {
 	
-	private final BandaService bandaService;
-	
-	public BandaController(BandaService bandaService) {
-		this.bandaService = bandaService;
-	}
+	@Autowired
+	private BandaService bandaService;
 	
 	@GetMapping(value = "/all")
 	public ResponseEntity<List<BandaDTO>> buscarTodos(){
@@ -46,6 +45,12 @@ public class BandaController {
 	@PutMapping(value = "/update")
 	public ResponseEntity<BandaDTO> atualizarBanda(@RequestBody BandaDTO banda){
 		return ResponseEntity.ok(bandaService.atualizarBanda(banda));
+	}
+	
+	@DeleteMapping(value = "/delete/{id}")
+	public ResponseEntity<BandaDTO> deletarBanda(@PathVariable("id") Integer id){
+		bandaService.deletarBandaPorId(id);
+		return ResponseEntity.ok().build();
 	}
 
 }
