@@ -12,22 +12,18 @@ import com.crudbanda.model.dto.BandaDTO;
 @Mapper(componentModel = "spring", uses = {AlbunsMapper.class, IntegrantesMapper.class})
 public interface BandaMapper {
 
-	// essa anotação vai jogar albunsDto dentro de albuns
 	@Mappings({
 		@Mapping(source = "albunsDto", target = "albuns"), 
 		@Mapping(source = "integrantesDto", target = "integrantes")
 		})
 	Banda converterBandaDtoParaEntity(BandaDTO bandaDto);
 	
-	// essa anotação vai jogar albuns dentro de albunsDto
 	@Mappings({
 		@Mapping(source = "albuns", target = "albunsDto"),
 		@Mapping(source = "integrantes", target = "integrantesDto")
 	})
 	BandaDTO converterBandaEntityParaBandaDto(Banda banda);
 
-	/* esse metodo funciona depois do mapeamento, ele confere se albuns e diferente de null, se essa
-	 * condição for verdadeira, para cada album ele seta uma banda */ 
 	@AfterMapping
 	default void after(final @MappingTarget Banda banda) {
 		if(banda.getAlbuns() != null) {

@@ -5,6 +5,7 @@ import java.util.List;
 import com.crudbanda.model.dto.BandaDTO;
 
 public interface BandaService {
+	
 	List<BandaDTO> buscarTodos();
 	
 	BandaDTO salvarBanda(BandaDTO banda);
@@ -15,5 +16,4 @@ public interface BandaService {
 	
 	void deletarBandaPorId(Integer id);
 	
-//	List<BandaDTO> buscarBandasPorAlbuns(Integer albumId);
 }

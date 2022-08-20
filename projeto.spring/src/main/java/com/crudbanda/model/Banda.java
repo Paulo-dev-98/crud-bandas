@@ -38,7 +38,7 @@ public class Banda implements Serializable{
 	@OneToMany(cascade=CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "banda")
 	private List<Albuns> albuns;
 	
-	@OneToMany(cascade=CascadeType.ALL)
+	@OneToMany(cascade=CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "banda")
 	private List<Integrantes> integrantes;
 
 }
