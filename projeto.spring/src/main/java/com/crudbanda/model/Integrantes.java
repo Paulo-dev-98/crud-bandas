@@ -18,10 +18,8 @@ public class Integrantes {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
 	private Integer id;
 	
-	@Column(name = "nome")
 	private String nome;
 	
 	@Column(name = "data_entrada")
@@ -29,9 +27,8 @@ public class Integrantes {
 	
 	@Column(name = "data_saida")
 	private String dataSaida;
-	
-	@Column(name = "instrumento")
-	private String Instrumento;
+
+	private String instrumento;
 	
 	@Column(name = "breve_historia")
 	private String breveHistoria;
