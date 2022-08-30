@@ -14,12 +14,10 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
 @Entity
 @Table(name = "banda")
-@NoArgsConstructor
 public class Banda implements Serializable{
 
 	private static final long serialVersionUID = 1L;
